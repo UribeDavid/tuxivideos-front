@@ -1,0 +1,23 @@
+<div class="row h-100 align-content-center">
+    <div class="col-4"></div>
+    <div class="col-4 text-center pl-5 pr-5">
+        <!-- <nz-card class="w-25 align-self-center mr-0">
+            <app-sign-in></app-sign-in>
+            <app-sign-up></app-sign-up>
+        </nz-card> -->
+        <div class="card">
+            <div class="card-body">
+                <app-sign-in *ngIf="isSignIn; else signUp"></app-sign-in>
+                <ng-template #signUp>
+                    <app-sign-up></app-sign-up>
+                </ng-template>
+                <a 
+                    class="mt-2"
+                    (click)="signUpOrIn()"
+                    nz-button
+                    nzType="link">{{ buttonText }}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>

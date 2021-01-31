@@ -1,0 +1,33 @@
+<form [formGroup]="signInForm">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <i 
+                    class="user-icon"
+                    nz-icon 
+                    nzType="user" 
+                    nzTheme="outline"></i>
+            </div>
+        </div>
+        <div class="col-12 mt-2">
+            <input 
+                nz-input 
+                placeholder="Email" 
+                formControlName="email">
+        </div>
+        <div class="col-12 mt-2"> 
+            <input 
+                nz-input 
+                placeholder="Contraseña" 
+                type="password"
+                formControlName="password">
+        </div>
+        <div class="col-12 mt-2">
+            <button
+                [disabled]="signInForm.invalid"
+                (click)="signIn()"
+                nz-button
+                nzType="primary">Sign in | Ingresar</button>
+        </div>
+    </div>
+</form>

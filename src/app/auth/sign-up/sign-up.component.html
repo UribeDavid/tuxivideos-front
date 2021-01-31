@@ -1,0 +1,84 @@
+<form [formGroup]="signUpForm">
+    <div class="row">
+        <div class="col-12">
+            <h1>Create your account</h1>
+        </div>
+        <div class="col-12 mt-2 text-left">
+            <label class="font-weight-bold">Identification</label>
+            <input 
+                nz-input
+                nzSize="large" 
+                placeholder="Cedula CC" 
+                formControlName="id">
+        </div>
+        <div class="col-12 mt-2 text-left">
+            <label class="font-weight-bold">Name</label>
+            <input 
+                nz-input
+                nzSize="large" 
+                placeholder="Nombre" 
+                formControlName="name">
+        </div>
+        <div class="col-12 mt-2 text-left">
+            <label class="font-weight-bold">Lastname</label>
+            <input 
+                nz-input
+                nzSize="large" 
+                placeholder="Apellido" 
+                formControlName="lastname">
+        </div>
+        <div class="col-12 mt-2 text-left">
+            <label class="font-weight-bold">Email</label>
+            <input 
+                nz-input
+                nzSize="large" 
+                placeholder="Email" 
+                formControlName="email">
+        </div>
+        <div class="col-12 mt-2 text-left">
+            <label class="font-weight-bold">Phone</label>
+            <input 
+                nz-input
+                nzSize="large" 
+                placeholder="Telefono móvil" 
+                formControlName="phone">
+            </div>
+        <div class="col-12 mt-2 text-left">
+            <label class="font-weight-bold">Address</label>
+            <input 
+                nz-input
+                nzSize="large" 
+                placeholder="Dirección" 
+                formControlName="address">
+        </div>
+        <div class="col-12 mt-2 text-left">
+            <label class="font-weight-bold">Password</label>
+            <input 
+                nz-input
+                nzSize="large" 
+                placeholder="Contraseña" 
+                type="password"
+                formControlName="password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-danger text-left">
+            <p *ngIf="campoNoValido('id')" class="mb-0">La identificación es requerida</p>
+            <p *ngIf="campoNoValido('name')" class="mb-0">El nombre es requerido</p>
+            <p *ngIf="campoNoValido('lastname')" class="mb-0">El apellido es requerido</p>
+            <p *ngIf="campoNoValido('email')" class="mb-0">El email es requerido</p>
+            <p *ngIf="campoNoValido('password')" class="mb-0">El password es requerido</p>
+            <p *ngIf="campoNoValido('phone')" class="mb-0">El telefono móvil es requerido</p>
+            <p *ngIf="campoNoValido('address')" class="mb-0">La dirección es requerida</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-2">
+            <button
+                (click)="signUp()"
+                nz-button
+                nzType="primary">Sign up | Registrarse
+            </button>
+        </div>
+    </div>
+</form>
